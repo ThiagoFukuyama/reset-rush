@@ -22,7 +22,7 @@ export function useStopwatch() {
     const start = useCallback(() => {
         setIsRunning(true);
         startTimeRef.current = Date.now() - elapsedTime;
-    }, []);
+    }, [elapsedTime]);
 
     const stop = useCallback(() => {
         setIsRunning(false);
@@ -31,7 +31,7 @@ export function useStopwatch() {
     const reset = useCallback(() => {
         setElapsedTime(0);
         stop();
-    }, []);
+    }, [stop]);
 
     return { elapsedTime, start, stop, reset };
 }

@@ -31,7 +31,7 @@ export function useCountdown(
 
     const pause = useCallback(() => {
         clearInterval(intervalRef.current);
-    }, [initialTime]);
+    }, []);
 
     return {
         count,
