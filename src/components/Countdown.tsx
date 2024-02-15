@@ -11,11 +11,11 @@ type CountdownProps = {
 export default function Countdown({ countdown }: CountdownProps) {
     const { initialTime, speed } = countdown;
 
-    const { setGameOver } = useGameOver();
+    const { setGameIsOver } = useGameOver();
 
     const { count, reset } = useCountdown(
         initialTime,
-        () => setGameOver(true),
+        () => setGameIsOver(),
         speed
     );
 

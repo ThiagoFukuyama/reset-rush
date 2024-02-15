@@ -2,7 +2,8 @@ import { createContext, useContext, useState } from "react";
 
 type GameOverContext = {
     isGameOver: boolean;
-    setGameOver: (isGameOver: boolean) => void;
+    setGameIsOver: () => void;
+    resetGameOver: () => void;
 };
 
 const GameOverContext = createContext<GameOverContext | null>(null);
@@ -28,11 +29,20 @@ export function GameOverContextProvider({
 }: GameOverContextProviderProps) {
     const [isGameOver, setGameOver] = useState(false);
 
+    function setGameIsOver() {
+        setGameOver(true);
+    }
+
+    function resetGameOver() {
+        setGameOver(false);
+    }
+
     return (
         <GameOverContext.Provider
             value={{
                 isGameOver,
-                setGameOver,
+                setGameIsOver,
+                resetGameOver,
             }}
         >
             {children}

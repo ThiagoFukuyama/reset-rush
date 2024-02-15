@@ -4,12 +4,12 @@ import { useTimeScore } from "../context/TimeScoreContext";
 import Button from "../components/Button";
 
 export default function GameOverScreen() {
-    const { setGameOver } = useGameOver();
     const { score, resetScore } = useTimeScore();
+    const { resetGameOver } = useGameOver();
 
     function handleResetGame() {
         resetScore();
-        setGameOver(false);
+        resetGameOver();
     }
 
     return (
