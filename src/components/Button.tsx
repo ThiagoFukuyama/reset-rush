@@ -8,7 +8,7 @@ type ButtonProps = {
 export default function Button({ children, className, ...rest }: ButtonProps) {
     return (
         <button
-            className={`bg-blue-700 text-xl px-5 py-2 text-white rounded-3xl italic ${className}`}
+            className={`bg-blue-700 hover:bg-blue-800 text-xl px-5 py-2 text-white rounded-3xl italic ${className}`}
             {...rest}
         >
             {children}

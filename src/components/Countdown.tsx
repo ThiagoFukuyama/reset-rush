@@ -39,9 +39,9 @@ export default function Countdown({ countdown }: CountdownProps) {
                 {count}
             </p>
             <button
+                tabIndex={-1}
                 onClick={reset}
-                onFocus={(e) => e.target.blur()}
-                className="bg-red-600 text-white px-10 py-3 font-semibold uppercase rounded-3xl italic"
+                className="bg-red-600 hover:bg-orange-600 active:bg-red-800 text-white px-10 py-3 font-semibold uppercase rounded-3xl italic "
             >
                 Reset
             </button>
