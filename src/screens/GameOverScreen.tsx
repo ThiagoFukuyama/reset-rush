@@ -5,10 +5,10 @@ import Button from "../components/Button";
 
 export default function GameOverScreen() {
     const { setGameOver } = useGameOver();
-    const { score, setScore } = useTimeScore();
+    const { score, resetScore } = useTimeScore();
 
     function handleResetGame() {
-        setScore("0");
+        resetScore();
         setGameOver(false);
     }
 

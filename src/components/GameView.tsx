@@ -1,7 +1,7 @@
 import { CountdownSettings } from "../types";
 
 import CountdowsWrapper from "./CountdowsWrapper";
-import TimeScoreDisplay from "./TimeScoreDisplay";
+import TimeScoreCounter from "./TimeScoreCounter";
 
 type GameViewProps = {
     countdowns: CountdownSettings[];
@@ -10,7 +10,7 @@ type GameViewProps = {
 export default function GameView({ countdowns }: GameViewProps) {
     return (
         <>
-            <TimeScoreDisplay />
+            <TimeScoreCounter />
             <CountdowsWrapper countdownList={countdowns} />
         </>
     );

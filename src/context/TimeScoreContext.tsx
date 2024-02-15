@@ -1,8 +1,12 @@
 import { createContext, useContext, useState } from "react";
 
+import type { TimeScore } from "../types";
+import { DEFAULT_SCORE } from "../constants";
+
 type TimeScoreContext = {
     score: string;
-    setScore: (score: string) => void;
+    setScore: (score: TimeScore) => void;
+    resetScore: () => void;
 };
 
 const TimeScoreContext = createContext<TimeScoreContext | null>(null);
@@ -26,13 +30,18 @@ export function useTimeScore() {
 export function TimeScoreContextProvider({
     children,
 }: TimeScoreContextProviderProps) {
-    const [score, setScore] = useState("0");
+    const [score, setScore] = useState<TimeScore>(DEFAULT_SCORE);
+
+    function resetScore() {
+        setScore(DEFAULT_SCORE);
+    }
 
     return (
         <TimeScoreContext.Provider
             value={{
                 score,
                 setScore,
+                resetScore,
             }}
         >
             {children}

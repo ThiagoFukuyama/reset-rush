@@ -3,3 +3,6 @@ export type CountdownSettings = {
     initialTime: number;
     speed: number;
 };
+
+export type TimeScore =
+    `${number}${number}:${number}${number}:${number}${number}`;
